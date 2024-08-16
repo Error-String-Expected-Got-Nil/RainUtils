@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>RainUtils</name>
+	<author>Error: String Expected, Got Nil</author>
+	<packageId>esegn.RainUtils</packageId>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<description>Utility library mod originally made for the RainRim mod.</description>
+	<modDependencies>
+		
+	</modDependencies>
+	<loadAfter>
+		
+	</loadAfter>
+</ModMetaData>

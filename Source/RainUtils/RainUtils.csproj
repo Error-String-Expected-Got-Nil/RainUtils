@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net481</TargetFramework>
+        <OutputPath>..\..\$(Configuration)\Assemblies\</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <Configurations>1.4;1.5</Configurations>
+        <RootNamespace>RainUtils</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' == '1.4'">
+        <DefineConstants>v1_4</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == '1.5'">
+        <DefineConstants>v1_5</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == '1.4' ">
+        <DebugType>none</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == '1.5' ">
+        <DebugType>none</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4104">
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+        <PackageReference Include="Lib.Harmony" Version="*">
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+</Project>
