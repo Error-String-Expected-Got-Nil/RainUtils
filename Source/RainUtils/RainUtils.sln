@@ -4,13 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainUtils", "RainUtils.cspr
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		1.5|Any CPU = 1.5|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8B21D8BB-7FC5-4B10-A470-F838A42E5CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B21D8BB-7FC5-4B10-A470-F838A42E5CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B21D8BB-7FC5-4B10-A470-F838A42E5CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B21D8BB-7FC5-4B10-A470-F838A42E5CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B21D8BB-7FC5-4B10-A470-F838A42E5CCA}.1.5|Any CPU.ActiveCfg = 1.5|Any CPU
+		{8B21D8BB-7FC5-4B10-A470-F838A42E5CCA}.1.5|Any CPU.Build.0 = 1.5|Any CPU
 	EndGlobalSection
 EndGlobal

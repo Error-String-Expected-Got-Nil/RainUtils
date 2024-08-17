@@ -13,4 +13,7 @@
 	<loadAfter>
 		
 	</loadAfter>
+	<loadBefore>
+		<li>Uuugggg.ThickArmor</li>
+	</loadBefore>
 </ModMetaData>
