@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Human"]/comps</xpath>
+        <value>
+            <li Class="RainUtils.LocalArmor.CompProperties_LocalArmor">
+                <localArmorInfo>
+                    <li>
+                        <targetPart>Torso</targetPart>
+                        <armorSharp>2.00</armorSharp>
+                        <armorBlunt>2.00</armorBlunt>
+                    </li>
+                    <li>
+                        <targetPart>Arm</targetPart>
+                        <armorSharp>2.00</armorSharp>
+                        <armorBlunt>2.00</armorBlunt>
+                    </li>
+                    <li>
+                        <targetPart>Leg</targetPart>
+                        <armorSharp>2.00</armorSharp>
+                        <armorBlunt>2.00</armorBlunt>
+                    </li>
+                </localArmorInfo>
+            </li>
+        </value>
+    </Operation>
+</Patch>

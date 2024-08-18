@@ -4,8 +4,9 @@
         <TargetFramework>net481</TargetFramework>
         <OutputPath>..\..\$(Configuration)\Assemblies\</OutputPath>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <Configurations>1.4;1.5</Configurations>
+        <Configurations>1.4;1.5;1.5 Debug</Configurations>
         <RootNamespace>RainUtils</RootNamespace>
+        <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)' == '1.4'">
@@ -26,6 +27,18 @@
 
     <PropertyGroup Condition=" '$(Configuration)' == '1.5' ">
         <DebugType>none</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == '1.5 Debug' ">
+      <DebugType>pdbonly</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == '1.5 Debug' ">
+      <OutputPath>..\..\1.5\Assemblies\</OutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == '1.5 Debug' ">
+      <DefineConstants>v1_5;</DefineConstants>
     </PropertyGroup>
 
     <ItemGroup>

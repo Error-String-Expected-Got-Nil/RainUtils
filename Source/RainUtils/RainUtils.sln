@@ -5,9 +5,12 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		1.5|Any CPU = 1.5|Any CPU
+		1.5 Debug|Any CPU = 1.5 Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8B21D8BB-7FC5-4B10-A470-F838A42E5CCA}.1.5|Any CPU.ActiveCfg = 1.5|Any CPU
 		{8B21D8BB-7FC5-4B10-A470-F838A42E5CCA}.1.5|Any CPU.Build.0 = 1.5|Any CPU
+		{8B21D8BB-7FC5-4B10-A470-F838A42E5CCA}.1.5 Debug|Any CPU.ActiveCfg = 1.5 Debug|Any CPU
+		{8B21D8BB-7FC5-4B10-A470-F838A42E5CCA}.1.5 Debug|Any CPU.Build.0 = 1.5 Debug|Any CPU
 	EndGlobalSection
 EndGlobal

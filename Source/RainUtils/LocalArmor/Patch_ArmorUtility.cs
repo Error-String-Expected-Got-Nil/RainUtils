@@ -49,7 +49,7 @@ namespace RainUtils.LocalArmor
                     .Insert(
                         CodeInstruction.LoadArgument(1, true), // Damage amount
                         CodeInstruction.LoadArgument(2), // Armor penetration
-                        CodeInstruction.LoadArgument(4, true), // DamageDef
+                        CodeInstruction.LoadArgument(4), // DamageDef
                         CodeInstruction.LoadArgument(0), // Pawn
                         CodeInstruction.LoadLocal(6, true), // Metal armor bool
                         CodeInstruction.LoadArgument(3), // BodyPartRecord
@@ -71,16 +71,20 @@ namespace RainUtils.LocalArmor
             if (!(pawn.GetComp<ThingComp_LocalArmor>()?.ArmoredParts.TryGetValue(part.def, out var info) ?? false))
                 return false;
 
-            var armorRating = 0f;
+            float? armorRating = null;
             if (damageDef.armorCategory.armorRatingStat == StatDefOf.ArmorRating_Sharp)
                 armorRating = info.armorSharp;
             else if (damageDef.armorCategory.armorRatingStat == StatDefOf.ArmorRating_Blunt)
                 armorRating = info.armorBlunt;
 
-            if (armorRating == 0f) return false;
+            if (armorRating == null) return false;
 
-            ApplyArmorMethod.Invoke(null, new object[] { damageAmount, armorPen, armorRating, null, 
-                damageDef, pawn, metalArmor });
+            var arguments = new object[] { damageAmount, armorPen, armorRating, null, damageDef, pawn, metalArmor };
+            ApplyArmorMethod.Invoke(null, arguments);
+
+            damageAmount = (float)arguments[0];
+            damageDef = (DamageDef)arguments[4];
+            metalArmor = (bool)arguments[6];
             
             return true;
         }
