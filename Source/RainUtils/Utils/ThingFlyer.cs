@@ -15,6 +15,7 @@ public static class ThingFlyer
         var flyer = (PawnFlyer)ThingMaker.MakeThing(flyingDef);
         var traverse = Traverse.Create(flyer);
         traverse.Field("startVec").SetValue(startPos ?? thing.TrueCenter());
+        traverse.Field("destCell").SetValue(destCell);
         traverse.Field("flightDistance").SetValue(thing.Position.DistanceTo(destCell));
         traverse.Field("flightEffecterDef").SetValue(flightEffecterDef);
         traverse.Field("soundLanding").SetValue(landingSound);
