@@ -21,7 +21,7 @@ public static class ThingFlyer
         flyer.Rotation = thing.Rotation;
         
         if (thing.Spawned) thing.DeSpawn(DestroyMode.WillReplace);
-        if (!traverse.Field("innerContainer").GetValue<ThingOwner<Thing>>().TryAdd(thing)) return flyer;
+        if (traverse.Field("innerContainer").GetValue<ThingOwner<Thing>>().TryAdd(thing)) return flyer;
         
         Log.Error("[RainUtils] - Failed to add Thing " + thing.ToStringSafe() + " to a flyer, destroying.");
         thing.Destroy();
