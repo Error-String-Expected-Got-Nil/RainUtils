@@ -86,6 +86,9 @@ public class Patch_ArmorUtility
         damageDef = (DamageDef)arguments[4];
         metalArmor = (bool)arguments[6];
             
+        // TODO: Create battle log entry?
+        // TODO: Add support for callback. Bool to enable callback checking, check all comps on pawn for interface?
+        
         return true;
     }
 }
