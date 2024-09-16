@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
@@ -82,12 +83,21 @@ public class Patch_ArmorUtility
         var arguments = new object[] { damageAmount, armorPen, armorRating, null, damageDef, pawn, metalArmor };
         ApplyArmorMethod.Invoke(null, arguments);
 
+        var preArmorDamage = damageAmount;
+        var preArmorDef = damageDef;
+        
         damageAmount = (float)arguments[0];
         damageDef = (DamageDef)arguments[4];
         metalArmor = (bool)arguments[6];
             
         // TODO: Create battle log entry?
-        // TODO: Add support for callback. Bool to enable callback checking, check all comps on pawn for interface?
+
+        foreach (var comp in pawn.AllComps)
+            // ReSharper disable once SuspiciousTypeConversion.Global
+            if (comp is ILocalArmorCallback callbackComp)
+                callbackComp.LocalArmorCallback(preArmorDamage, damageAmount, armorPen, preArmorDef, 
+                    damageDef, pawn, metalArmor, part);
+        
         
         return true;
     }
