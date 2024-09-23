@@ -46,7 +46,7 @@ public class FlashAnimator : IExposable
         var stage = Stages[_stageIndex];
         
         _periodStopwatch++;
-        if (_periodStopwatch > stage.period)
+        if (stage.period != 0 && _periodStopwatch > stage.period)
         {
             _periodStopwatch = 0;
             _fallingPeriod = !_fallingPeriod;
@@ -142,7 +142,7 @@ public class FlashAnimationStage : IExposable
     // Ex.: At 0.5, max intensity will be half of its base value by the end of the stage
     public float fadeFactor = 1f; 
     public int duration = 60; // Total ticks the stage should last for
-    public int period = 60; // Duration on and off when flickering. Set >= duration for no flicker.
+    public int period; // Duration on and off when flickering. Set to 0 or >= duration for no flicker.
     public int phase; // Subtracted from period stopwatch at start of stage
     public bool smooth = true; // False makes flickers have hard edges 
 
@@ -152,7 +152,7 @@ public class FlashAnimationStage : IExposable
         Scribe_Values.Look(ref minIntensity, nameof(minIntensity), 1f);
         Scribe_Values.Look(ref fadeFactor, nameof(fadeFactor), 1f);
         Scribe_Values.Look(ref duration, nameof(duration), 60);
-        Scribe_Values.Look(ref period, nameof(period), duration);
+        Scribe_Values.Look(ref period, nameof(period));
         Scribe_Values.Look(ref phase, nameof(phase));
         Scribe_Values.Look(ref smooth, nameof(smooth), true);
     }
